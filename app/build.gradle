@@ -38,4 +38,7 @@ dependencies {
 
     // MPAndroidChart
     implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
+
+    // Volley
+    implementation 'com.android.volley:volley:1.2.1'
 }

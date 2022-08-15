@@ -1,4 +1,4 @@
-package com.example.investmentportfoliotracker;
+package com.mobdevfc.cryptocurrencies;
 
 import org.junit.Test;
 

@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Investment Portfolio Tracker</string>
 
-    <string name="yourPortfolio">Your portfolio</string>
+    <string name="cryptocurrencies">Cryptocurrencies</string>
     <string name="settings">Settings</string>
-    <string name="addInvestment">Add investment</string>
-    <string name="investments">Investments</string>
+
+    <string name="value">$ %1s</string>
 </resources>
