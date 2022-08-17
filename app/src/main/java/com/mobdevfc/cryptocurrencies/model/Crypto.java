@@ -1,8 +1,8 @@
 package com.mobdevfc.cryptocurrencies.model;
 
 public class Crypto {
-    private String symbol;
-    private String name;
+    private final String symbol;
+    private final String name;
 
     public Crypto(String symbol, String name) {
         this.symbol = symbol;
@@ -13,15 +13,8 @@ public class Crypto {
         return symbol;
     }
 
-    public void setSymbol(String symbol) {
-        this.symbol = symbol;
-    }
-
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 }

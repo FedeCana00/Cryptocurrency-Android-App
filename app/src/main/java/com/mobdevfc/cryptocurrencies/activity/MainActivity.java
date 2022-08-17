@@ -3,22 +3,35 @@ package com.mobdevfc.cryptocurrencies.activity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.os.Bundle;
 import com.mobdevfc.cryptocurrencies.R;
 import com.mobdevfc.cryptocurrencies.adapter.CryptoAdapter;
 
 public class MainActivity extends AppCompatActivity {
+    // VARIABLES
+    private CryptoAdapter cryptoAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        init();
+        try {
+            init();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     private void init(){
+        SwipeRefreshLayout swipeRefreshLayout = findViewById(R.id.swipeRefreshLayout);
+        swipeRefreshLayout.setOnRefreshListener(() -> {
+            cryptoAdapter.refresh();
+            swipeRefreshLayout.setRefreshing(false);
+        });
+
         // use a linear layout manager
         LinearLayoutManager linearLayoutManager =
                 new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
@@ -29,8 +42,8 @@ public class MainActivity extends AppCompatActivity {
         // in content do not change the layout size of the RecyclerView
         recyclerView.setHasFixedSize(true);
 
-        // specify an adapter (see also next example)
-        CryptoAdapter cryptoAdapter = new CryptoAdapter(this);
+        // specify an adapter
+        cryptoAdapter = new CryptoAdapter(this);
         recyclerView.setAdapter(cryptoAdapter);
     }
 }

@@ -13,14 +13,12 @@ public class Cryptocurrencies {
      */
     public static List<Crypto> get(){
         List<Crypto> res = new ArrayList<>();
-        res.add(new Crypto("1ST", "FirstBlood"));
+        res.add(new Crypto("BUSD", "Binance-USD"));
+        res.add(new Crypto("BTC", "BitCoin"));
+        res.add(new Crypto("BTT", "BitTorrent"));
+        res.add(new Crypto("ETH", "Ethereum"));
+        res.add(new Crypto("ETHOS", "Ethos"));
         res.add(new Crypto("2GIVE", "GiveCoin"));
-        res.add(new Crypto("808", "808Coin"));
-        res.add(new Crypto("AAVE", "Aave"));
-        res.add(new Crypto("ABT", "ArcBlock"));
-        res.add(new Crypto("ABY", "ArtByte"));
-        res.add(new Crypto("AC", "AsiaCoin"));
-
         return res;
     }
 }

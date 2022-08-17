@@ -43,7 +43,7 @@ public class CryptoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                     (Request.Method.GET
-                            , Url.getCryptocurrencies("CRYPTO_INTRADAY", "ETH"
+                            , Url.getCryptocurrencies("CRYPTO_INTRADAY", crypto.getSymbol()
                             , "USD", "5min")
                             , null
                             , response -> {
@@ -112,5 +112,12 @@ public class CryptoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     @Override
     public int getItemViewType(int position) {
         return 0;
+    }
+
+    /**
+     * Notification to the adapter to update the data.
+     */
+    public void refresh(){
+        notifyDataSetChanged();
     }
 }
