@@ -7,4 +7,5 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="appColor">#F27B35</color>
+    <color name="appColorDarker">#F36918</color>
 </resources>

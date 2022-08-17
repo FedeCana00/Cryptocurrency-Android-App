@@ -57,7 +57,10 @@ public class CryptoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                                     .getString("4. close");
                             // set value
                             ((TextView) view.findViewById(R.id.value))
-                                    .setText(context.getResources().getString(R.string.value, value.substring(0, value.length() - 3)));
+                                    .setText(context.getResources().getString(R.string.value
+                                            , value.endsWith("000")
+                                                    ? value.substring(0, value.length() - 3)
+                                                    : value));
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
