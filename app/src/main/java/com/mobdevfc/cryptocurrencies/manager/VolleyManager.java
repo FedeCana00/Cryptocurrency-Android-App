@@ -9,6 +9,9 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
 
+/**
+ * This singleton handle the http requests.
+ */
 public class VolleyManager {
     private static VolleyManager instance;
     private RequestQueue requestQueue;
@@ -36,6 +39,11 @@ public class VolleyManager {
                 });
     }
 
+    /**
+     * Used to get singleton instance.
+     * @param context represents the activity context.
+     * @return returns the singleton instance.
+     */
     public static synchronized VolleyManager getInstance(Context context) {
         if (instance == null) {
             instance = new VolleyManager(context);
@@ -43,6 +51,10 @@ public class VolleyManager {
         return instance;
     }
 
+    /**
+     * Used to obtain request queue.
+     * @return returns request queue.
+     */
     public RequestQueue getRequestQueue() {
         if (requestQueue == null) {
             // getApplicationContext() is key, it keeps you from leaking the
@@ -52,10 +64,19 @@ public class VolleyManager {
         return requestQueue;
     }
 
+    /**
+     * Add request to queue.
+     * @param req represents the request to add.
+     * @param <T>
+     */
     public <T> void addToRequestQueue(Request<T> req) {
         getRequestQueue().add(req);
     }
 
+    /**
+     * Getter.
+     * @return returns image loader.
+     */
     public ImageLoader getImageLoader() {
         return imageLoader;
     }
