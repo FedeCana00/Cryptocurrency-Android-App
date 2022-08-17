@@ -2,7 +2,7 @@ package com.mobdevfc.cryptocurrencies.classes;
 
 public class Url {
     // CONSTANTS
-    private static final String API_KEY = "VK5ATAX4G4911J4I";
+    private static final String API_KEY = "YOUR_API_KEY";
     private static final String WEBSITE = "https://www.alphavantage.co/query?";
 
     /**
